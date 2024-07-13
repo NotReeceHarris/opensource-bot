@@ -1,0 +1,40 @@
+{
+    "plugins": [
+        [
+            "module-resolver",
+            {
+                "root": [
+                    "./src"
+                ],
+                "alias": {
+                    "src": "./src"
+                }
+            }
+        ]
+    ],
+    "presets": [
+        [
+            "@babel/preset-typescript"
+        ],
+        [
+            "@babel/preset-env",
+            {
+                "targets": {
+                    "node": "current"
+                }
+            }
+        ],
+        [
+            "minify",
+            {
+                "builtIns": false,
+                "mangle": {
+                    "exclude": [
+                        "MyCustomError"
+                    ]
+                },
+                "keepFnName": true
+            }
+        ]
+    ]
+}
